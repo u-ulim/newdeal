@@ -1,0 +1,29 @@
+/* 변수 */
+:root{
+    --main-text-color:#222;
+}
+/* 공통사항 */
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+ol,ul{
+    list-style:none;
+}
+a{
+    text-decoration:none;
+    color:var(--main-text-color);
+}
+img,video{
+    vertical-align:top;
+}
+.blind{
+    position:absolute;
+    top:-99999em;
+}
+body{
+    font-family: "",sans-serif;
+    /* font-size:16px;브라우저의 글자 크기 기본은 16px */
+    color:var(--main-text-color);
+}

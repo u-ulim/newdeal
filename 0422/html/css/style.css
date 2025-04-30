@@ -1,0 +1,39 @@
+body{
+    background:#000;
+}
+/* header */
+header{
+    padding:0 2.5vw;
+}
+.header-wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+.header-wrap>div{
+    display: flex;
+    align-items: center;
+    gap:40px;
+}
+.header-wrap>div ul{
+    display: flex;
+    gap:50px;
+}
+.header-wrap>div ul>li>a{
+    color:white;
+    text-transform:uppercase;
+}
+.header-wrap>.header-wrap-right .ham-btn>a{
+    display: block;
+    width:80px;
+    height:80px;
+    background:rgb(255, 230, 0) 
+    url(../images/iconmonstr-menu-lined.svg) 
+    no-repeat center center;
+    background-size:40px;
+    text-indent:-9999px;
+}
+/* main */
+
+/* footer */
