@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        let number = [10, 5, 1, 100, 3, 7];
+      let number = [10, 5, 1, 100, 3, 7];
+      let result2 = number.filter((n) => n >= 5);
+      documnet.write(`${result2} <br>`);
+
+      //result3 짝수번째의 요소를 찾아서
+      let result3 = fruits.filter((item, id) => {
+        if (id % 2 === 0) {
+          return item;
+        }
+      });
+
+      document.write(`${result2}<br>`);
     </script>
-</body>
+  </body>
 </html>
