@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 동물 클래스
+      class Animal {
+        constructor(kind, speed = 0) {
+          this.kind = kind;
+          this.speed = speed;
+        }
+
+        run(speed) {
+          this.speed = speed;
+          console.log(`동물 ${this.kind}는 속도가 ${this.speed}이야`);
+        }
+
+        stop() {
+          console.log(`${this.kind}가 멈췄습니다`);
+        }
+      }
+
+      let dog = new Animal("강아지");
+      dog.run(20); // 출력: 동물 강아지는 속도가 20이야
+      dog.stop(); // 출력: 강아지가 멈췄습니다
+
+      // 동물 Buds
+      class Buds extends Animal {
+        hide() {
+          console.log(`${this.kind}가 숨었습니다`);
+        }
+
+        stop() {
+          super.stop();
+        }
+      }
+
+      let bud = new Buds("무당벌레");
+      bud.run(40); // 출력: 동물 무당벌레는 속도가 40이야
+      bud.stop(); // 출력: 무당벌레가 멈췄습니다
+    </script>
+  </body>
+</html>
