@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.선언적함수
+        function hi1(){
+            document.write("하이~~ 일반함수<br>")
+        }
+        //2. 익명적함수
+        let hi2 = function(){
+            document.write("하이~~ 익명적함수 <br>")
+        }
+        //3 화살표함수
+        // let hi3 = () => {
+        //     document.write("화살표")
+        // }
+        let hi3 = () => document.write("화살표")
+        
+        hi1();
+        hi2();
+        hi3();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
