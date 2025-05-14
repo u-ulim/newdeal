@@ -32,10 +32,36 @@
 
   li {
     width: calc(20% - 30px);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    transition: 0.5s;
+
+    &.hover {
+      transform: scale();
+    }
+    .posterImg {
+      flex: 1;
+      border-radius: 20px;
+      overflow: hidden;
+    }
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+    .title {
+      display: flex;
+      justify-content: space-between;
+      strong {
+        display: block;
+        font-size: 2rem;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 80%;
+      }
+      span {
+      }
     }
   }
 }

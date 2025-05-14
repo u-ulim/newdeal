@@ -1,8 +1,0 @@
-{
-  "name": "홍길동",
-  "age": 18,
-  "gender": true,
-  "null": null,
-  "object": {},
-  "hobby": ["독서", "영화감상", "잠자기"]
-}

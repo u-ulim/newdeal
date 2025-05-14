@@ -14,6 +14,7 @@ const movieList = document.querySelector(".movie-list");
 // 데이터 저장 변수
 let movies = [];
 let genres = {};
+let selectedGenres = 0;
 
 // 장르 버튼 보여주기
 function showButtons() {
@@ -31,6 +32,7 @@ function showButtons() {
       buttons.forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
       selectedGenres = Number(btn.getAttribute("data-genre"));
+      showMovies();
     });
   });
 }
@@ -50,18 +52,52 @@ async function fetchGenres() {
   }
 }
 
+// 영화 보여주기
+function showMovies() {
+  movieList.innerHTML = "";
+
+  // 장르 체크하여 필터
+  const filterMovies = movies.filter((movie) => {
+    const matchGenre =
+      selectedGenres === 0 || movie.genre_ids.includes(selectedGenres);
+    return matchGenre;
+  });
+
+  console.log(filterMovies);
+
+  filterMovies.forEach((movie) => {
+    const li = document.createElement("li");
+    const imgSrc = movie.poster_path
+      ? `http://image.tmdb.org/t/p/w500${movie.poster_path}`
+      : `https://via.placeholder.com/500x700?text=No+Image`;
+    li.innerHTML = `<div class=posterImg><Img src=${imgSrc} alt="${movie.title}" /></div>
+    <div class=title><strong>${movie.title}</strong><span>${movie.vote_average}</span></div>`;
+    movieList.appendChild(li);
+  });
+}
+
 // 영화 가져오기
 async function fetchMovies() {
   try {
-    const response = await fetch(MOVIE_URL);
-    const data = await response.json();
-    movies = data.results;
-    console.log("인기 영화 데이터:", movies);
-    // 이후 showMovies() 호출 가능
+    // const response = await fetch(MOVIE_URL);
+    // const data = await response.json();
+    // movies = data.results;
+    // console.log("인기 영화 데이터:", movies);
+    // // 이후 showMovies() 호출 가능
+    await fetch(MOVIE_URL)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        movies = data.results;
+        showMovies();
+      });
   } catch (error) {
     console.error("인기 영화 불러오는 것을 실패", error);
   }
 }
+
+// input에 글자를 입력하면, 글자를 포함하는 내용을 필터하여 영화 보여주기
+searchInput.addEventListener;
 
 // 실행
 fetchGenres();
