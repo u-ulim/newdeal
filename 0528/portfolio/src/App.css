@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+header {
+  border-bottom: 1px solid #ccc;
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+    ul {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      gap: 50px;
+    }
+  }
+}
