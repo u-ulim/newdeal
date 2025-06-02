@@ -1,76 +1,97 @@
 $메인컬러: #646cff;
-$제목컬러:#E97FFF;
+$제목컬러: #e97fff;
 $메인글자: #333;
 $둥글기: 30px;
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 a {
-    color: $메인글자;
-    text-decoration: none;}
+  color: $메인글자;
+  text-decoration: none;
+}
 
 li {
-    list-style: none;
+  list-style: none;
 }
-body{
-    background: black;
-    color:white;
+body {
+  background: black;
+  color: white;
 }
-@mixin myFlex($gap:0) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: $gap;
+@mixin myFlex($gap: 0, $justify: space-between) {
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
+  gap: $gap;
 }
 
 .wrap {
+  .content-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  header {
+    line-height: 80px;
+    position: fixed;
+    width: 100%;
+    // border-bottom: 1px solid #ddd;
+
     .content-inner {
-        max-width: 1400px;
-        margin: 0 auto;
-    }
-
-    header {
-        line-height: 80px;
-        position: fixed;
-        width: 100%;
-        // border-bottom: 1px solid #ddd;
-
-        .content-inner {
-            div {
-                @include myFlex();
-
-                ul {
-                    @include myFlex(50px);
-
-                    li {
-                        font-size: 1.25rem;
-                        font-weight: 600;
-                        a{
-                            color: white;
-                        }
-                    }
-
-                }
-            }
-        }
-    }
-
-    .index {
-        height: 100vh;      
-
+      div {
         @include myFlex();
-        .content-inner {
-            @include myFlex(100px)
+
+        ul {
+          @include myFlex(50px);
+
+          li {
+            font-size: 1.25rem;
+            font-weight: 600;
+            a {
+              color: white;
+            }
+          }
         }
+      }
     }
-    .main{
-        padding:100px 0;
+  }
 
+  .index {
+    height: 100vh;
+
+    @include myFlex();
+    .content-inner {
+      @include myFlex(100px);
     }
+  }
+  .main {
+    padding: 100px 0;
+  }
 
-    footer {}
+  .skill-list {
+    margin-top: 100px;
+    @include myFlex(20px, start);
+    li {
+      width: calc(25% - 20px);
+    }
+  }
+
+  .contact-wrap {
+    max-width: 600px;
+    margin: 0 auto;
+    form {
+      input,
+      textarea,
+      button {
+        width: 100%;
+        line-height: 40px;
+        padding: 0 10px;
+      }
+    }
+  }
+  footer {
+  }
 }

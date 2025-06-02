@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  background: black;
+  color: white;
+}
+
+.wrap .content-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.wrap header {
+  line-height: 80px;
+  position: fixed;
+  width: 100%;
+}
+.wrap header .content-inner div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+}
+.wrap header .content-inner div ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+.wrap header .content-inner div ul li {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.wrap header .content-inner div ul li a {
+  color: white;
+}
+.wrap .index {
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+}
+.wrap .index .content-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px;
+}
+.wrap .main {
+  padding: 100px 0;
+}
+.wrap .skill-list {
+  margin-top: 100px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+}
+.wrap .skill-list li {
+  width: calc(25% - 20px);
+}
+.wrap .contact-wrap {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.wrap .contact-wrap form input,
+.wrap .contact-wrap form textarea,
+.wrap .contact-wrap form button {
+  width: 100%;
+  line-height: 40px;
+  padding: 0 10px;
+}/*# sourceMappingURL=App.css.map */
